@@ -105,6 +105,8 @@ def webhook():
             "message": "Invalid Exchange, Please Try Again!"
         }
 
+    return {"message": "I do not know what to do"}
+
 
 if __name__ == '__main__':
     app.run(debug=False)
