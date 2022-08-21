@@ -7,6 +7,7 @@ import requests
 import hashlib
 import uuid
 
+
 app = Flask(__name__)
 
 # load config.json
@@ -98,15 +99,8 @@ def webhook():
         print('==', 'Buy has been triggered', data['order_data']['quantity'], 'with pair', data['order_data']['symbol'], '==')
         return {'message': 'success'}
 
-    else:
-        print("Invalid Exchange, Please Try Again!")
-        return {
-            "status": "error",
-            "message": "Invalid Exchange, Please Try Again!"
-        }
-
     return {"message": "I do not know what to do"}
-
+    
 
 if __name__ == '__main__':
     app.run(debug=False)
